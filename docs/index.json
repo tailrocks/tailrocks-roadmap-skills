@@ -1,0 +1,122 @@
+[
+  {
+    "name": "tailrocks-brainstorm",
+    "description": ">-",
+    "argumentHint": "<roadmap-slug> [--batch]",
+    "overview": "skills/tailrocks-brainstorm/index.md",
+    "definition": "skills/tailrocks-brainstorm/definition.md",
+    "source": "https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-brainstorm/SKILL.md"
+  },
+  {
+    "name": "tailrocks-finalize",
+    "description": ">-",
+    "argumentHint": "<roadmap-slug> [--batch]",
+    "overview": "skills/tailrocks-finalize/index.md",
+    "definition": "skills/tailrocks-finalize/definition.md",
+    "source": "https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-finalize/SKILL.md"
+  },
+  {
+    "name": "tailrocks-grilling",
+    "description": ">-",
+    "argumentHint": "<idea, plan, or decision>",
+    "overview": "skills/tailrocks-grilling/index.md",
+    "definition": "skills/tailrocks-grilling/definition.md",
+    "source": "https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-grilling/SKILL.md"
+  },
+  {
+    "name": "tailrocks-idea",
+    "description": ">-",
+    "argumentHint": "<idea text>",
+    "overview": "skills/tailrocks-idea/index.md",
+    "definition": "skills/tailrocks-idea/definition.md",
+    "source": "https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-idea/SKILL.md"
+  },
+  {
+    "name": "tailrocks-improve-execution",
+    "description": ">-",
+    "argumentHint": "<plans/NNN-name.md> [--deep] [--batch]",
+    "overview": "skills/tailrocks-improve-execution/index.md",
+    "definition": "skills/tailrocks-improve-execution/definition.md",
+    "source": "https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-improve-execution/SKILL.md"
+  },
+  {
+    "name": "tailrocks-improve-plan",
+    "description": ">-",
+    "argumentHint": "<finding or change> [--deep] [--batch]",
+    "overview": "skills/tailrocks-improve-plan/index.md",
+    "definition": "skills/tailrocks-improve-plan/definition.md",
+    "source": "https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-improve-plan/SKILL.md"
+  },
+  {
+    "name": "tailrocks-improve-reconcile",
+    "description": ">-",
+    "argumentHint": "[--deep] [--batch] [repository path]",
+    "overview": "skills/tailrocks-improve-reconcile/index.md",
+    "definition": "skills/tailrocks-improve-reconcile/definition.md",
+    "source": "https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-improve-reconcile/SKILL.md"
+  },
+  {
+    "name": "tailrocks-plan",
+    "description": ">-",
+    "argumentHint": "<roadmap-slug> [additional context] [--deep]",
+    "overview": "skills/tailrocks-plan/index.md",
+    "definition": "skills/tailrocks-plan/definition.md",
+    "source": "https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-plan/SKILL.md"
+  },
+  {
+    "name": "tailrocks-prove",
+    "description": ">-",
+    "argumentHint": "<roadmap-slug> [--deep]",
+    "overview": "skills/tailrocks-prove/index.md",
+    "definition": "skills/tailrocks-prove/definition.md",
+    "source": "https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-prove/SKILL.md"
+  },
+  {
+    "name": "tailrocks-reconcile",
+    "description": ">-",
+    "argumentHint": "<roadmap-slug> [--deep] [--batch]",
+    "overview": "skills/tailrocks-reconcile/index.md",
+    "definition": "skills/tailrocks-reconcile/definition.md",
+    "source": "https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-reconcile/SKILL.md"
+  },
+  {
+    "name": "tailrocks-record-decision",
+    "description": ">-",
+    "argumentHint": "<roadmap-slug> <decision>",
+    "overview": "skills/tailrocks-record-decision/index.md",
+    "definition": "skills/tailrocks-record-decision/definition.md",
+    "source": "https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-record-decision/SKILL.md"
+  },
+  {
+    "name": "tailrocks-record-feedback",
+    "description": ">-",
+    "argumentHint": "<roadmap-slug>",
+    "overview": "skills/tailrocks-record-feedback/index.md",
+    "definition": "skills/tailrocks-record-feedback/definition.md",
+    "source": "https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-record-feedback/SKILL.md"
+  },
+  {
+    "name": "tailrocks-research",
+    "description": ">-",
+    "argumentHint": "<question | roadmap-slug> [--slug <topic-name>] [--for <roadmap-slug>] [--deep] [--batch]",
+    "overview": "skills/tailrocks-research/index.md",
+    "definition": "skills/tailrocks-research/definition.md",
+    "source": "https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-research/SKILL.md"
+  },
+  {
+    "name": "tailrocks-retrospect",
+    "description": ">-",
+    "argumentHint": "<roadmap-slug> [--source <path>] [--repo <owner/name>] [--pr <number>]",
+    "overview": "skills/tailrocks-retrospect/index.md",
+    "definition": "skills/tailrocks-retrospect/definition.md",
+    "source": "https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-retrospect/SKILL.md"
+  },
+  {
+    "name": "tailrocks-seed-roadmap",
+    "description": ">-",
+    "argumentHint": "<verified finding or plans/NNN-name.md> [--batch]",
+    "overview": "skills/tailrocks-seed-roadmap/index.md",
+    "definition": "skills/tailrocks-seed-roadmap/definition.md",
+    "source": "https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-seed-roadmap/SKILL.md"
+  }
+]
