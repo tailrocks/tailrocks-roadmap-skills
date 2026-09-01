@@ -1,11 +1,11 @@
 ---
 title: "Tailrocks: tailrocks-prove"
-description: ">-"
+description: " Use only when the user explicitly requests this skill. Execute every surface a roadmap item claims to ship, confirm or refute each reported defect, and write the verification round — subagent fan-out, evidence per surface, vacuous-proof audit. Judges only; never fixes, never writes status."
 ---
 
 Generated from [tailrocks-prove/SKILL.md](https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-prove/SKILL.md).
 
->-
+ Use only when the user explicitly requests this skill. Execute every surface a roadmap item claims to ship, confirm or refute each reported defect, and write the verification round — subagent fan-out, evidence per surface, vacuous-proof audit. Judges only; never fixes, never writes status.
 
 [Read the complete skill definition](definition.md).
 

@@ -1,11 +1,11 @@
 ---
 title: "Tailrocks: tailrocks-improve-reconcile"
-description: ">-"
+description: " Use only when the user explicitly requests this skill. Reconcile the standalone plans/ backlog against current repository truth, optionally re-verifying every row, and update only plans/README.md. Never edits plans, source, or roadmap items."
 ---
 
 Generated from [tailrocks-improve-reconcile/SKILL.md](https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-improve-reconcile/SKILL.md).
 
->-
+ Use only when the user explicitly requests this skill. Reconcile the standalone plans/ backlog against current repository truth, optionally re-verifying every row, and update only plans/README.md. Never edits plans, source, or roadmap items.
 
 [Read the complete skill definition](definition.md).
 

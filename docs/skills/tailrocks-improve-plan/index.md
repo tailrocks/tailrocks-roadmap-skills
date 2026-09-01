@@ -1,11 +1,11 @@
 ---
 title: "Tailrocks: tailrocks-improve-plan"
-description: ">-"
+description: " Use only when the user explicitly requests this skill. Convert one selected verified finding or described change into one standalone executor-ready plan under plans/ and its index row. Never implements, seeds roadmap work, commits, or pushes."
 ---
 
 Generated from [tailrocks-improve-plan/SKILL.md](https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-improve-plan/SKILL.md).
 
->-
+ Use only when the user explicitly requests this skill. Convert one selected verified finding or described change into one standalone executor-ready plan under plans/ and its index row. Never implements, seeds roadmap work, commits, or pushes.
 
 [Read the complete skill definition](definition.md).
 

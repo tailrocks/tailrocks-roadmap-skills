@@ -1,11 +1,11 @@
 ---
 title: "Tailrocks: tailrocks-plan"
-description: ">-"
+description: " Use only when the user explicitly requests this skill. Convert a READY roadmap item into roadmap/<slug>/plan/ and goal/: coverage ledger, research-gap manifest, an OpenSpec-grammar spec, one zero-context plan per work item, and the goal handoff. Do not use on unshaped items or one-session changes."
 ---
 
 Generated from [tailrocks-plan/SKILL.md](https://github.com/tailrocks/tailrocks-roadmap-skills/blob/main/skills/tailrocks-plan/SKILL.md).
 
->-
+ Use only when the user explicitly requests this skill. Convert a READY roadmap item into roadmap/<slug>/plan/ and goal/: coverage ledger, research-gap manifest, an OpenSpec-grammar spec, one zero-context plan per work item, and the goal handoff. Do not use on unshaped items or one-session changes.
 
 [Read the complete skill definition](definition.md).
 
