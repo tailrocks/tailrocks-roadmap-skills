@@ -11,9 +11,9 @@
     {
       "name": "tailrocks-roadmap-skills",
       "source": "./",
-      "description": "Cross-agent Tailrocks skills for strict Rust, Axum, TypeScript, TanStack, native macOS Swift with Liquid Glass, code-health ratchets, and the roadmap delivery pipeline (idea, brainstorm, research, record-decision, finalize, plan, reconcile, portable goal handoff)",
+      "description": "Evidence-bound roadmap delivery from idea capture and research through shaping, planning, execution proof, reconciliation, and retrospection.",
       "version": "0.28.0",
-      "category": "workflow"
+      "category": "Roadmap Skills"
     }
   ]
 }

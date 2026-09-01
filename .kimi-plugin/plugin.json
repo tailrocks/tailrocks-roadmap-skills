@@ -1,39 +1,17 @@
 {
   "name": "tailrocks-roadmap-skills",
   "version": "0.28.0",
-  "description": "Cross-agent Tailrocks skills for strict Rust, Axum, TypeScript, TanStack, native macOS Swift with Liquid Glass, code-health ratchets, and the roadmap delivery pipeline (idea, brainstorm, research, record-decision, finalize, plan, reconcile, portable goal handoff)",
+  "description": "Evidence-bound roadmap delivery from idea capture and research through shaping, planning, execution proof, reconciliation, and retrospection.",
   "keywords": [
-    "tailrocks",
-    "rust",
-    "edition-2024",
-    "skills",
-    "best-practices",
-    "clippy",
-    "rustfmt",
-    "axum",
-    "typescript",
-    "bun",
-    "tanstack",
-    "cargo-deny",
-    "nextest",
-    "mise",
-    "workspace",
-    "code-review",
-    "root-cause",
-    "architecture",
-    "redesign",
-    "first-principles",
-    "correctness",
-    "research",
     "roadmap",
+    "ideas",
+    "brainstorming",
+    "research",
     "planning",
-    "goal",
-    "swift",
-    "swiftui",
-    "appkit",
-    "macos",
-    "liquid-glass",
-    "accessibility"
+    "goals",
+    "verification",
+    "reconciliation",
+    "decisions"
   ],
   "author": {
     "name": "tailrocks",
@@ -43,7 +21,24 @@
   "license": "Apache-2.0",
   "skills": "./skills/",
   "interface": {
-    "displayName": "Tailrocks Skills",
-    "shortDescription": "Strict Rust, TypeScript, and native macOS engineering workflows"
-  }
+    "displayName": "Roadmap Skills",
+    "shortDescription": "Evidence-bound roadmap and delivery workflows.",
+    "longDescription": "Evidence-bound roadmap delivery from idea capture and research through shaping, planning, execution proof, reconciliation, and retrospection.",
+    "capabilities": [
+      "Brainstorm",
+      "Research",
+      "Plan",
+      "Prove",
+      "Reconcile",
+      "Record",
+      "Retrospect"
+    ],
+    "websiteURL": "https://github.com/tailrocks/tailrocks-roadmap-skills",
+    "defaultPrompt": [
+      "Shape this roadmap idea.",
+      "Research this roadmap question.",
+      "Plan this ready roadmap item."
+    ]
+  },
+  "repository": "https://github.com/tailrocks/tailrocks-roadmap-skills"
 }
