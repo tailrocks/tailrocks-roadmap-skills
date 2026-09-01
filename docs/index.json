@@ -1,7 +1,7 @@
 [
   {
     "name": "tailrocks-brainstorm",
-    "description": " Use only when the user explicitly requests this skill. Shape a DRAFT or SHAPING roadmap item through a one-question-at-a-time interview, writing every answer into the item as it resolves. Do not use for final readiness (tailrocks-finalize) or without a live human.",
+    "description": "Use only when the user explicitly requests this skill. Shape a DRAFT or SHAPING roadmap item through a one-question-at-a-time interview, writing every answer into the item as it resolves. Do not use for final readiness (tailrocks-finalize) or without a live human.",
     "argumentHint": "<roadmap-slug> [--batch]",
     "overview": "skills/tailrocks-brainstorm/index.md",
     "definition": "skills/tailrocks-brainstorm/definition.md",
@@ -9,7 +9,7 @@
   },
   {
     "name": "tailrocks-finalize",
-    "description": " Use only when the user explicitly requests this skill. Close the shaping interview on a SHAPING roadmap item: resolve every screen, flow, and open question, then grant READY. The only source of READY. Do not use on a raw DRAFT (tailrocks-brainstorm first) or without a live human.",
+    "description": "Use only when the user explicitly requests this skill. Close the shaping interview on a SHAPING roadmap item: resolve every screen, flow, and open question, then grant READY. The only source of READY. Do not use on a raw DRAFT (tailrocks-brainstorm first) or without a live human.",
     "argumentHint": "<roadmap-slug> [--batch]",
     "overview": "skills/tailrocks-finalize/index.md",
     "definition": "skills/tailrocks-finalize/definition.md",
@@ -17,7 +17,7 @@
   },
   {
     "name": "tailrocks-grilling",
-    "description": " Use when the user asks to be grilled, challenged, interrogated, or stress-tested on an idea, plan, or decision before action. Conversation-only: retrieve facts, recommend answers, leave decisions to the user, require confirmation, and never execute.",
+    "description": "Use when the user asks to be grilled, challenged, interrogated, or stress-tested on an idea, plan, or decision before action. Conversation-only: retrieve facts, recommend answers, leave decisions to the user, require confirmation, and never execute.",
     "argumentHint": "<idea, plan, or decision>",
     "overview": "skills/tailrocks-grilling/index.md",
     "definition": "skills/tailrocks-grilling/definition.md",
@@ -25,7 +25,7 @@
   },
   {
     "name": "tailrocks-idea",
-    "description": " Use only when the user explicitly requests this skill. Capture a raw product or feature idea as a new DRAFT roadmap item under roadmap/<slug>/ and register it in the index. Capture only: no interviewing, research, or planning. Do not use to modify an existing item.",
+    "description": "Use only when the user explicitly requests this skill. Capture a raw product or feature idea as a new DRAFT roadmap item under roadmap/<slug>/ and register it in the index. Capture only: no interviewing, research, or planning. Do not use to modify an existing item.",
     "argumentHint": "<idea text>",
     "overview": "skills/tailrocks-idea/index.md",
     "definition": "skills/tailrocks-idea/definition.md",
@@ -33,7 +33,7 @@
   },
   {
     "name": "tailrocks-improve-execution",
-    "description": " Use only when the user explicitly requests this skill. Execute one approved standalone plans/ file in an isolated disposable worktree, re-run its criteria, independently review the diff, and return one verdict. Never merges or pushes.",
+    "description": "Use only when the user explicitly requests this skill. Execute one approved standalone plans/ file in an isolated disposable worktree, re-run its criteria, independently review the diff, and return one verdict. Never merges or pushes.",
     "argumentHint": "<plans/NNN-name.md> [--deep] [--batch]",
     "overview": "skills/tailrocks-improve-execution/index.md",
     "definition": "skills/tailrocks-improve-execution/definition.md",
@@ -41,7 +41,7 @@
   },
   {
     "name": "tailrocks-improve-plan",
-    "description": " Use only when the user explicitly requests this skill. Convert one selected verified finding or described change into one standalone executor-ready plan under plans/ and its index row. Never implements, seeds roadmap work, commits, or pushes.",
+    "description": "Use only when the user explicitly requests this skill. Convert one selected verified finding or described change into one standalone executor-ready plan under plans/ and its index row. Never implements, seeds roadmap work, commits, or pushes.",
     "argumentHint": "<finding or change> [--deep] [--batch]",
     "overview": "skills/tailrocks-improve-plan/index.md",
     "definition": "skills/tailrocks-improve-plan/definition.md",
@@ -49,7 +49,7 @@
   },
   {
     "name": "tailrocks-improve-reconcile",
-    "description": " Use only when the user explicitly requests this skill. Reconcile the standalone plans/ backlog against current repository truth, optionally re-verifying every row, and update only plans/README.md. Never edits plans, source, or roadmap items.",
+    "description": "Use only when the user explicitly requests this skill. Reconcile the standalone plans/ backlog against current repository truth, optionally re-verifying every row, and update only plans/README.md. Never edits plans, source, or roadmap items.",
     "argumentHint": "[--deep] [--batch] [repository path]",
     "overview": "skills/tailrocks-improve-reconcile/index.md",
     "definition": "skills/tailrocks-improve-reconcile/definition.md",
@@ -57,7 +57,7 @@
   },
   {
     "name": "tailrocks-plan",
-    "description": " Use only when the user explicitly requests this skill. Convert a READY roadmap item into roadmap/<slug>/plan/ and goal/: coverage ledger, research-gap manifest, an OpenSpec-grammar spec, one zero-context plan per work item, and the goal handoff. Do not use on unshaped items or one-session changes.",
+    "description": "Use only when the user explicitly requests this skill. Convert a READY roadmap item into roadmap/<slug>/plan/ and goal/: coverage ledger, research-gap manifest, an OpenSpec-grammar spec, one zero-context plan per work item, and the goal handoff. Do not use on unshaped items or one-session changes.",
     "argumentHint": "<roadmap-slug> [additional context] [--deep]",
     "overview": "skills/tailrocks-plan/index.md",
     "definition": "skills/tailrocks-plan/definition.md",
@@ -65,7 +65,7 @@
   },
   {
     "name": "tailrocks-prove",
-    "description": " Use only when the user explicitly requests this skill. Execute every surface a roadmap item claims to ship, confirm or refute each reported defect, and write the verification round — subagent fan-out, evidence per surface, vacuous-proof audit. Judges only; never fixes, never writes status.",
+    "description": "Use only when the user explicitly requests this skill. Execute every surface a roadmap item claims to ship, confirm or refute each reported defect, and write the verification round — subagent fan-out, evidence per surface, vacuous-proof audit. Judges only; never fixes, never writes status.",
     "argumentHint": "<roadmap-slug> [--deep]",
     "overview": "skills/tailrocks-prove/index.md",
     "definition": "skills/tailrocks-prove/definition.md",
@@ -73,7 +73,7 @@
   },
   {
     "name": "tailrocks-reconcile",
-    "description": " Use only when the user explicitly requests this skill. True up roadmap/<slug>/ with execution reality: re-run each plan row's done criteria, reject criteria that executed nothing, fold the newest verification round into the item's Remaining, and set the status reality supports.",
+    "description": "Use only when the user explicitly requests this skill. True up roadmap/<slug>/ with execution reality: re-run each plan row's done criteria, reject criteria that executed nothing, fold the newest verification round into the item's Remaining, and set the status reality supports.",
     "argumentHint": "<roadmap-slug> [--deep] [--batch]",
     "overview": "skills/tailrocks-reconcile/index.md",
     "definition": "skills/tailrocks-reconcile/definition.md",
@@ -81,7 +81,7 @@
   },
   {
     "name": "tailrocks-record-decision",
-    "description": " Use only when the user explicitly requests this skill. Record one user decision on a roadmap item: validate it against settled ground, date it with its reason, propagate it, and flag what it invalidates, including reopening READY or PLANNED work. Do not use to decide for the user.",
+    "description": "Use only when the user explicitly requests this skill. Record one user decision on a roadmap item: validate it against settled ground, date it with its reason, propagate it, and flag what it invalidates, including reopening READY or PLANNED work. Do not use to decide for the user.",
     "argumentHint": "<roadmap-slug> <decision>",
     "overview": "skills/tailrocks-record-decision/index.md",
     "definition": "skills/tailrocks-record-decision/definition.md",
@@ -89,7 +89,7 @@
   },
   {
     "name": "tailrocks-record-feedback",
-    "description": " Use only when the user explicitly requests this skill. Capture what a user found wrong with a roadmap item's shipped work: their words verbatim, one statement per defect, reproduction as given. Captures only — tailrocks-prove verifies it.",
+    "description": "Use only when the user explicitly requests this skill. Capture what a user found wrong with a roadmap item's shipped work: their words verbatim, one statement per defect, reproduction as given. Captures only — tailrocks-prove verifies it.",
     "argumentHint": "<roadmap-slug>",
     "overview": "skills/tailrocks-record-feedback/index.md",
     "definition": "skills/tailrocks-record-feedback/definition.md",
@@ -97,7 +97,7 @@
   },
   {
     "name": "tailrocks-research",
-    "description": " Use only when the user explicitly requests this skill. Run deep, sourced research into a reusable topic under research/, for a question or to extend a roadmap item, using parallel investigators. Do not use for decisions only the user can make, or questions one lookup answers.",
+    "description": "Use only when the user explicitly requests this skill. Run deep, sourced research into a reusable topic under research/, for a question or to extend a roadmap item, using parallel investigators. Do not use for decisions only the user can make, or questions one lookup answers.",
     "argumentHint": "<question | roadmap-slug> [--slug <topic-name>] [--for <roadmap-slug>] [--deep] [--batch]",
     "overview": "skills/tailrocks-research/index.md",
     "definition": "skills/tailrocks-research/definition.md",
@@ -105,7 +105,7 @@
   },
   {
     "name": "tailrocks-retrospect",
-    "description": " Use only when the user explicitly requests this skill. After a roadmap item ships, rebuild which skills ran from commit trailers, diff that against its Decisions, Must not, spec IDs, and verification rounds, and propose patches to the skills at fault. Proposes only; tailrocks-skill-update edits skills.",
+    "description": "Use only when the user explicitly requests this skill. After a roadmap item ships, rebuild which skills ran from commit trailers, diff that against its Decisions, Must not, spec IDs, and verification rounds, and propose patches to the skills at fault. Proposes only; tailrocks-skill-update edits skills.",
     "argumentHint": "<roadmap-slug> [--source <path>] [--repo <owner/name>] [--pr <number>]",
     "overview": "skills/tailrocks-retrospect/index.md",
     "definition": "skills/tailrocks-retrospect/definition.md",
@@ -113,7 +113,7 @@
   },
   {
     "name": "tailrocks-seed-roadmap",
-    "description": " Use only when the user explicitly requests this skill. Convert one already-verified finding or approved standalone plan into one roadmap DRAFT item on its delivery branch and pull request. Writes roadmap artifacts only; never implements.",
+    "description": "Use only when the user explicitly requests this skill. Convert one already-verified finding or approved standalone plan into one roadmap DRAFT item on its delivery branch and pull request. Writes roadmap artifacts only; never implements.",
     "argumentHint": "<verified finding or plans/NNN-name.md> [--batch]",
     "overview": "skills/tailrocks-seed-roadmap/index.md",
     "definition": "skills/tailrocks-seed-roadmap/definition.md",
