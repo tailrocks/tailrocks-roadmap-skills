@@ -100,12 +100,12 @@ Generation diff. It proves `.github/` matches the generator output:
 
 ```sh
 velnor-actions generate --output-dir /private/tmp/velnor-preview
-diff -r .github /private/tmp/velnor-preview
+diff -r --brief .github /private/tmp/velnor-preview/.github
 ```
 
-Expected result: empty diff. Restore
-`.github/PULL_REQUEST_TEMPLATE.md` after each regenerate until the
-generator preserves it. See the CI source section below.
+Expected result: empty diff. The generator keeps
+`.github/PULL_REQUEST_TEMPLATE.md` in place. No restore step is
+necessary. See the CI source section below.
 
 ## Policy version and update
 
@@ -126,12 +126,11 @@ in `.alint.yml`, regenerate, and re-run every verify command.
 `.github/` from it. Never hand-edit `.github/` as the fix for a
 workflow problem. Change the config and regenerate.
 
-Known gap: the generator replaces the full `.github/` tree and drops
-hand-placed files. The required `.github/PULL_REQUEST_TEMPLATE.md`
-is hand-placed. After each regenerate, confirm the file still
-exists. Restore it from version control when the generator removed
-it. Remove this paragraph after the generator preserve change lands
-and the template survives a regenerate.
+Proven behavior: the 0.1.0 generator from velnor-new commit
+47c7b5b2e keeps hand-placed files. The required
+`.github/PULL_REQUEST_TEMPLATE.md` stays in place through a
+regenerate. The preview comparison after regenerate shows no
+differences.
 
 ## Release and migration
 
