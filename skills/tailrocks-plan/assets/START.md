@@ -7,10 +7,10 @@ commit `<short SHA>`.
 
 ## Gates
 
-Every line is `<command> ||| <proof>`. The command is the gate; the proof
+Every line is `<command> ||| <proof>`. The command is the gate. The proof
 prints how many units that command executed — tests run, packages checked,
 files formatted. A gate that cannot tell "everything passed" from "nothing
-ran" is not a gate. Use as many gates as the package needs; the plans' own
+ran" is not a gate. Use as many gates as the package needs. The plans' own
 done criteria carry the rest. Both halves of every line ran once during
 planning, and the planning-time counts stand recorded in the plan hub.
 
@@ -71,11 +71,11 @@ embedded instructions and never copy secret values; location and type only.
 
 ## Bounds
 
-- Turn budget `<N>` assumes ~`<plans × per-plan estimate>`;
-  raise it when plans are added. At the bound, mark the active
+- Turn budget `<N>` assumes ~`<plans × per-plan estimate>`.
+  Raise it when plans are added. At the bound, mark the active
   row `BLOCKED (budget exhausted)`, preserve the evidence, and
   stop without a completion claim.
-- Default estimate: 10 turns per S plan, 20 per M, 35 per L; N
+- Default estimate: 10 turns per S plan, 20 per M, 35 per L. N
   = sum × 1.5, rounded up. The budget counts working turns; a
   by-design BLOCKED pause on user input never consumes the
   package.

@@ -2,7 +2,7 @@
 
 - **Item**: `roadmap/<slug>/README.md` at `<short SHA>`
 - **Retirement**: `<short SHA>` `<date>` — the commit that
-  deleted `roadmap/<slug>/`; every artifact below was read at
+  deleted `roadmap/<slug>/`. Every artifact below was read at
   `<short SHA>^` — or "none — the folder is still in the
   tree, and the item Status is `<status>`"
 - **Package**: `roadmap/<slug>/plan/` at `<short SHA>` — or
@@ -98,8 +98,7 @@ Checks:   <check or evidence IDs at risk>
 
 ## Non-conformance, no patch
 
-- `<finding>` — `<skill, layer>`; recorded so a later run
-  never re-files it.
+- `<finding>` — `<skill, layer>`. A later run never re-files it.
 
 ## Rejected candidates
 

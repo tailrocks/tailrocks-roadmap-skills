@@ -309,20 +309,20 @@ Plan-writer subagents inherit nothing and write exactly one plan.
 Each brief holds:
 
 - the manifest entry, verbatim: goal, covered requirements,
-  scope, dependencies, guardrail IDs;
+  scope, dependencies, guardrail IDs.
 - absolute paths to this template, the roadmap item, the
   capability spec files, the named vetted research chapters,
   the coverage ledger, and the output path
-  `roadmap/<slug>/plan/NNN-<slug>.md`;
+  `roadmap/<slug>/plan/NNN-<slug>.md`.
 - the verification-tooling research chapter or the resolved
   gate commands, mandatory in every brief whatever the plan
-  topic;
-- the planned-at commit SHA to stamp;
+  topic.
+- the planned-at commit SHA to stamp.
 - the execution profile. Assign `bounded-executor` only when
   inputs, file scope, expected edits, commands, done criteria,
   and STOP conditions are explicit. Otherwise retain
   `frontier-judgment` and name the unresolved decision. Every
-  STOP routes to the frontier owner;
+  STOP routes to the frontier owner.
 - the rules that the writer cannot know, verbatim. Write only
   the one target file. Never modify source. Inline the spec
   contract and plan-specific guardrails. The executor reads
@@ -384,15 +384,15 @@ findings. Include no secret values: location and type only.
 
 - Executable by a model that never saw the roadmap item or
   this session, with only the plan file and the repository?
-- Preconditions prove every dependency observably; spec
-  contract and guardrails inlined, not referenced.
+- Preconditions prove every dependency observably. The spec
+  contract and guardrails stay inlined, not referenced.
 - Every verification is a command with an expected result.
   Every step names exact files and symbols. Every done
   criterion asserts executed work, not an exit code.
-- Scope explicit both ways; the territory of neighboring
-  plans named.
+- Scope stays explicit both ways. The territory of neighboring
+  plans stays named.
 - STOP conditions reflect the actual risks of this plan.
-- No secret values; planned-at SHA filled.
+- No secret values. Planned-at SHA filled.
 
 Orchestrator checks (not the reviewer checks):
 

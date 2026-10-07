@@ -47,10 +47,11 @@ do not depend on it, and fold the result in when it lands.
 question yet.** "How does sync conflict resolution behave under
 clock skew" is a question that research answers. "Sync facts to
 figure out" is not. Record the graduation condition instead: the
-fact that makes it statable, such as "statable once we know
-whether sync is per-account or global", or a decision to put to
-the user. A vague research blob is the path where a fact silently
-turns into an agent guess at execution time.
+fact that makes it statable. An example is "statable once we know
+whether sync is per-account or global". A decision to put to
+the user is also a graduation condition. A vague research blob is
+the path where a fact silently turns into an agent guess at
+execution time.
 
 **Slow lookups run in background investigators.** A quick grep or
 file open happens inline. Heavier work, such as a

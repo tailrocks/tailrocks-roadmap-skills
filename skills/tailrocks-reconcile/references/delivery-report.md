@@ -32,7 +32,7 @@ pass, each entry with its evidence pointer. Three sources:
   Remaining` and lands here, so the fix stands recorded,
   not only forgotten.
 - A surface that the newest round proved working ("What
-  holds up"), named with its evidence, because it is the
+  holds up"), named with its evidence. It is the
   part that the next round never breaks.
 
 Never in the report: attempts, partial progress, unverified

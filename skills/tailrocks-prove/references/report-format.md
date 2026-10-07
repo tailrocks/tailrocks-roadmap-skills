@@ -31,8 +31,8 @@ two.
     row: command, exit, duration, decisive line, and
     artifacts.
 
-Blocking defects precede decision compliance, and both
-precede drift, because that order descends by "does a person
+Blocking defects precede decision compliance. Both
+precede drift. That order descends by "does a person
 use this at all, and does it honor the settled choices of
 the user". The holding parts never drop. A report that lists
 only failures reads as a verdict on the whole delivery. The
@@ -85,9 +85,9 @@ the actual behavior of the surface against the expected one.
 No fix. The round proves, never designs the repair, and a
 fix written here is one that nobody reviewed.
 
-State the mechanism when the evidence shows it, not a guess:
-"returns a stored value that nothing ever assigns" is
-mechanism; "probably a race" is a guess in mechanism
+State the mechanism when the evidence shows it, not a guess.
+"Returns a stored value that nothing ever assigns" states a
+mechanism. "Probably a race" is a guess in mechanism
 clothes.
 
 Every execution block cites its run: command, exit,

@@ -59,12 +59,12 @@ Judge each done criterion in the plan and each gate line in
 The `VACUOUS` shapes, all seen in the field:
 
 - a package, crate, or target filter that resolves to
-  nothing: the runner reports zero tests and exits 0;
-- a test-name filter with a typo, same outcome;
+  nothing: the runner reports zero tests and exits 0.
+- a test-name filter with a typo, same outcome.
 - a suite whose cases all skip under the current
-  configuration;
+  configuration.
 - a check whose input file never existed, and whose "no
-  findings" and "nothing to read" are the same output;
+  findings" and "nothing to read" are the same output.
 - a gate that asserts an equality that the empty value also
   satisfies: a published-projection test that passes because
   both sides are empty.
@@ -79,7 +79,7 @@ replacement before belief in that row returns.
 For a surface with a blessed reference, compare per region
 or per element, and check both directions:
 
-- present in the artifact and wrong, the ordinary case;
+- present in the artifact and wrong, the ordinary case.
 - **present in the reference and absent from the artifact.**
   This case is the one that most gates miss. A per-element
   check over the current content finds nothing to fault. A

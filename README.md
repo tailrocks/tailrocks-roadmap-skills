@@ -10,21 +10,22 @@ model-selectable.
 
 | Skill | Task |
 | --- | --- |
-| `tailrocks-idea` | Capture a raw idea as a DRAFT item. User-only. |
-| `tailrocks-seed-roadmap` | Seed one verified finding. User-only. |
-| `tailrocks-brainstorm` | Shape a young item in an interview. User-only. |
-| `tailrocks-grilling` | Stress-test a choice. Conversation only. |
-| `tailrocks-research` | Produce vetted reusable research. User-only. |
-| `tailrocks-record-decision` | Record one user decision. User-only. |
-| `tailrocks-record-feedback` | Capture one feedback round. User-only. |
-| `tailrocks-finalize` | Close shaping and grant READY. User-only. |
-| `tailrocks-plan` | Write the plan package and goal handoff. User-only. |
-| `tailrocks-prove` | Execute surfaces and judge the round. User-only. |
-| `tailrocks-reconcile` | True up status with reality. User-only. |
-| `tailrocks-retrospect` | Propose skill patches from history. User-only. |
+| [`tailrocks-idea`](skills/tailrocks-idea/SKILL.md) | Capture a raw idea as a DRAFT item. User-only. |
+| [`tailrocks-seed-roadmap`](skills/tailrocks-seed-roadmap/SKILL.md) | Seed one verified finding. User-only. |
+| [`tailrocks-brainstorm`](skills/tailrocks-brainstorm/SKILL.md) | Shape a young item in an interview. User-only. |
+| [`tailrocks-grilling`](skills/tailrocks-grilling/SKILL.md) | Stress-test a choice. Conversation only. |
+| [`tailrocks-research`](skills/tailrocks-research/SKILL.md) | Produce vetted reusable research. User-only. |
+| [`tailrocks-record-decision`](skills/tailrocks-record-decision/SKILL.md) | Record one user decision. User-only. |
+| [`tailrocks-record-feedback`](skills/tailrocks-record-feedback/SKILL.md) | Capture one feedback round. User-only. |
+| [`tailrocks-finalize`](skills/tailrocks-finalize/SKILL.md) | Close shaping and grant READY. User-only. |
+| [`tailrocks-plan`](skills/tailrocks-plan/SKILL.md) | Write the plan package and goal handoff. User-only. |
+| [`tailrocks-prove`](skills/tailrocks-prove/SKILL.md) | Execute surfaces and judge the round. User-only. |
+| [`tailrocks-reconcile`](skills/tailrocks-reconcile/SKILL.md) | True up status with reality. User-only. |
+| [`tailrocks-retrospect`](skills/tailrocks-retrospect/SKILL.md) | Propose skill patches from history. User-only. |
 
 Each skill body lives in its own directory. Read
-`skills/tailrocks-idea/SKILL.md` for one complete example.
+[skills/tailrocks-idea/SKILL.md](skills/tailrocks-idea/SKILL.md)
+for one complete example.
 
 ## Install
 
@@ -84,14 +85,14 @@ is no longer needed. Commands per agent:
 
 - Claude Code: `claude plugin update
   tailrocks-roadmap-skills@tailrocks` or `claude plugin
-  marketplace update tailrocks`; remove with `claude plugin
+  marketplace update tailrocks`. Remove with `claude plugin
   uninstall tailrocks-roadmap-skills`.
-- Codex: `codex plugin marketplace upgrade tailrocks`; remove with
+- Codex: `codex plugin marketplace upgrade tailrocks`. Remove with
   `codex plugin remove tailrocks-roadmap-skills@tailrocks`.
 - Muse: `muse plugins marketplace update tailrocks`, then the
-  remove plus install sequence; remove with `muse plugins remove
+  remove plus install sequence. Remove with `muse plugins remove
   tailrocks-roadmap-skills@tailrocks`.
-- Kimi session: no `update` subcommand; remove with `/plugins
+- Kimi session: no `update` subcommand. Remove with `/plugins
   remove tailrocks-roadmap-skills`, then `/reload`.
 - Amp, OpenCode, Antigravity, Grok: see
   `docs/installation.md` for the exact steps.

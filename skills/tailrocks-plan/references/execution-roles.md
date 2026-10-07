@@ -26,8 +26,8 @@ eligibility predicate.
 ## `frontier-judgment`
 
 - **Eligible when:** architecture or decomposition is
-  ambiguous; risk or security needs classification; sources
-  conflict; a STOP needs routing; or final semantic
+  ambiguous, risk or security needs classification, sources
+  conflict, a STOP needs routing, or final semantic
   acceptance is due.
 - **Forbidden:** claiming that a mechanical check proves
   semantic fitness, or passing an unresolved decision to a
@@ -37,7 +37,7 @@ eligibility predicate.
 - **Record:** decision, rationale, cited evidence, unresolved
   risks, and next escalation.
 - **Escalate:** to `human-decision` for intent or
-  authorization; otherwise retain ownership until ambiguity
+  authorization. Otherwise retain ownership until ambiguity
   clears.
 - **Fresh context:** only when paired with
   `independent-verifier` for final semantic acceptance.
@@ -83,7 +83,7 @@ eligibility predicate.
 - **Inputs:** artifact boundary, cited sources, read-only
   scope, and fixed finding schema.
 - **Record:** per finding, artifact section, cited source,
-  observation, and verdict; state fresh-context provenance.
+  observation, and verdict. State fresh-context provenance.
 - **Escalate:** every mismatch or missing source to the
   frontier owner.
 - **Fresh context:** yes.
