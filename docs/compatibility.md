@@ -51,8 +51,8 @@ These facts were observed on 2026-10-07 from the package files. They
 are not install proofs:
 
 - All twelve frontmatter names match their skill directories.
-- All names are 28 characters or less. All descriptions are 1024
-  characters or less. The Amp, OpenCode, and Kimi caps fit.
+- The longest name uses 25 characters. The longest description
+  uses 342 characters. The Amp, OpenCode, and Kimi caps fit.
 - The root manifest carries the Agent Plugins 1.0.0 schema id.
 - The Kimi manifest sets `skills` to `./skills/`.
 - Every payload file under `skills/` is text. No file carries the

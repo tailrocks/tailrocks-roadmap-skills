@@ -205,8 +205,8 @@ skills, 200 files, 10 MiB per file, 25 MiB per skill, text files
 only. A binary file blocks that skill from loading. Names keep 64
 characters or less and match their directory. Descriptions keep 1024
 characters or less. All twelve skills in this package fit these
-caps. Names are 28 characters or less. Descriptions are 1024
-characters or less. Every payload file is text (observed
+caps. The longest name uses 25 characters. The longest
+description uses 342 characters. Every payload file is text (observed
 2026-10-07). Duplicates resolve first-`name`-wins: a local copy
 masks a repository copy, and a personal copy masks a workspace copy.
 Amp cannot enforce per-skill user-only entry: it lists every
@@ -341,9 +341,9 @@ verb.
 
 Limits and evidence: V1 names use 1 to 64 lowercase hyphenated
 characters and match their directory. Descriptions use 1 to 1024
-characters. All twelve skills in this package fit: names are 28
-characters or less, descriptions are 1024 characters or less
-(observed 2026-10-07). Never write V2 keys
+characters. All twelve skills in this package fit: the longest
+name uses 25 characters, and the longest description uses 342
+characters (observed 2026-10-07). Never write V2 keys
 (`metadata.opencode/autoinvoke`, `disable-model-invocation`,
 `permission.skill`) into V1 instructions: the V1 `permission.skill`
 map and the V2 JSONC permissions are different schemas. Keep V1 and
