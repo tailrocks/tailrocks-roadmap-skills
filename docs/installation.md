@@ -536,10 +536,11 @@ auto-discovers the catalog, so the marketplace URL is required:
 /plugins install https://github.com/tailrocks/tailrocks-roadmap-skills/commit/98d23280cd562c9298ce13ae40bd0eb73a3e376a
 ```
 
-The commit pin is the recommended form. The pin above is the current
-central-catalog revision of this package (version 0.28.0). Apply
-every install, enable, disable, or remove with `/reload` or a new
-session.
+The commit pin is the recommended form. The pin above is the last
+verified main revision of this package (version 0.28.0). It predates
+the rewrite on branch `standardize/package-rewrite`. Re-pin to the
+merge commit after the branch merges. Apply every install, enable,
+disable, or remove with `/reload` or a new session.
 
 Inspect the install (session):
 
@@ -640,7 +641,10 @@ Kimi (session):
 /plugins install https://github.com/tailrocks/tailrocks-roadmap-skills/commit/98d23280cd562c9298ce13ae40bd0eb73a3e376a
 ```
 
-Then run `/reload` and delete the stale managed copy when needed.
+The pin above predates the rewrite on branch
+`standardize/package-rewrite`. Re-pin to the merge commit after the
+branch merges. Then run `/reload` and delete the stale managed copy
+when needed.
 
 Amp: delete the old installed skill directories, add the twelve new
 skill directories, and run the `reload_skills` tool. OpenCode and
