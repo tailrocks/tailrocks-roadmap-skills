@@ -1,101 +1,114 @@
 # Subagent fan-out
 
-A round executes many surfaces, and each one needs its own build, its own
-fixtures, and its own long output. Running them in one context means the
-fifth surface is judged by an agent whose attention is full of the first
-four — and it means one surface's failure narrative colors the next.
+A round executes many surfaces, and each one needs its own
+build, its own fixtures, and its own long output. One context
+that runs them all judges the fifth surface with attention
+full of the first four, and lets one failure narrative color
+the next.
 
 Fan out: one agent per surface row, each blind to the others.
 
-## The brief each agent gets
+## The brief of each agent
 
-- The surface, and the exact command or interaction that exercises it.
-- The bound SHA and the built artifact's path — every agent uses the same
-  build, so a difference between two surfaces is a difference in the product,
-  not in the compiler flags.
-- The configuration or data directory to run against.
-- The authorized target, isolated data, and allowed side effects. Production,
-  external, or irreversible effects require explicit authorization; otherwise
-  return `NOT EXECUTED` without attempting them.
-- The claims to test: the item's statements about this surface, and any `U#`
-  from the feedback round that names it.
+- The surface, and the exact command or interaction that
+  exercises it.
+- The bound SHA and the built artifact path. Every agent uses
+  the same build, so a difference between two surfaces is a
+  difference in the product, not in the compiler flags.
+- The configuration or data directory for the run.
+- The authorized target, isolated data, and allowed side
+  effects. Production, external, or irreversible effects need
+  explicit authorization. Otherwise return `NOT EXECUTED`
+  without attempting them.
+- The tested claims: the statements of the item about this
+  surface, and any `U#` from the feedback round that names
+  it.
 - The blessed reference for a visual surface, by path.
-- The exact prepared-session manifest and inventory row. It invokes the
-  installed capability driver and returns its receipt plus the evidence
-  projection; handwritten execution facts are invalid.
+- The disposable checkout path and the inventory row. The
+  agent runs the native tool and returns the execution block
+  plus the evidence projection. Handwritten execution facts
+  are invalid.
 
-And three prohibitions, stated in the brief because agents drift toward
-helpfulness: **do not fix anything**, **do not report a verdict you did not
-execute**, and **do not soften a defect into a suggestion**.
+State three prohibitions in the brief, because agents drift
+toward helpfulness: **fix nothing**, **report no verdict
+without execution**, and **soften no defect into a
+suggestion**.
 
 ## The decisions lane
 
-One agent checks the item's recorded decisions against what shipped. Its
-brief: the decisions list (the package's `plan/spec/decisions.md`, or the
-item's live `## Decisions` when no package exists), the bound SHA, the built
-artifacts, and the same three prohibitions. It returns one row per decision:
+One agent checks the recorded decisions of the item against
+the shipped result. Its brief holds the decisions list. The
+list is the package `plan/spec/decisions.md`, or the live
+`## Decisions` of the item when no package exists. It holds
+the bound SHA and the built artifacts. It holds the same
+three prohibitions. It returns one row per decision:
 
-- `HELD` — the artifact honors the decision, with the evidence: a command
-  that exercised the behavior, or `file:line` for a structural choice that
-  only inspection can settle.
-- `VIOLATED` — the artifact contradicts the decision. This is a blocking
-  finding: the user made a choice, nothing re-opened it, and the work broke
-  it. Report what the artifact does instead, with evidence.
-- `NOT VERIFIABLE` — the round cannot settle it (no environment, decision
-  not yet reachable by any shipped surface). Named with what would settle
-  it; never silently dropped, because an unchecked decision is how "the
-  user decided X" quietly becomes "the build does Y".
+- `HELD`: the artifact honors the decision, with the
+  evidence: a command that exercised the behavior, or
+  `file:line` for a structural choice that only inspection
+  settles.
+- `VIOLATED`: the artifact contradicts the decision. This is
+  a blocking finding: the user made a choice, nothing
+  re-opened it, and the work broke it. Report the actual
+  behavior of the artifact, with evidence.
+- `NOT VERIFIABLE`: the round never settles it (no
+  environment, or no shipped surface reaches the decision
+  yet). Name the sign that settles it. Never drop it
+  silently, because an unchecked decision is the path where
+  "the user decided X" quietly turns into "the build does Y".
 
-A decision the evidence shows violated gets the same refute pass as any
-defect before it is reported.
+A decision that the evidence shows violated gets the same
+refute pass as any defect before reporting.
 
-## What an agent returns
+## The return of an agent
 
-The typed driver receipt and the evidence block from `execution-evidence.md`,
-nothing else. No
-recommendations, no root-cause theory beyond what the output shows, no
-prioritization — the round orders findings once, at the end, with every
-surface visible. An agent that returns prose without a receipt is not
-re-prompted into trust; the row remains missing and assembly refuses.
+The execution block from `execution-evidence.md`, nothing
+else. No recommendations, no root-cause theory beyond the
+shown output, no prioritization. The round orders findings
+once, at the end, with every surface visible. An agent that
+returns prose without executed output leaves its row missing,
+and the round never publishes with a missing row.
 
 ## The refute pass
 
-Findings arrive plausible. That is not the same as true, and a round that
-reports a defect the code does not have costs more trust than one that misses
-a defect.
+Findings arrive plausible. Plausible is not true, and a round
+that reports a defect that the code lacks costs more trust
+than one that misses a defect.
 
-- Every `DEFECT` gets an independent agent whose brief is to **reproduce it
-  from the evidence alone**. Cannot reproduce → the finding is downgraded to
-  the observation it actually is, or dropped, and the report says so.
-- Every `WORKS` on a surface the user reported broken gets an agent whose
-  brief is to **make it fail the way they described**. A clean verdict that
-  contradicts a user's report needs more evidence than one that agrees with
-  it, because the user was there.
-- `--deep` runs several refuters per finding with distinct lenses —
-  reproduction, cold start, wrong-data, concurrency — rather than several
-  copies of the same attempt. Redundancy catches flakes; diversity catches
+- Every `DEFECT` gets an independent agent whose brief is to
+  **reproduce it from the evidence alone**. No
+  reproduction downgrades the finding to its actual
+  observation, or drops it, and the report states that fact.
+- Every `WORKS` on a surface that the user reported broken
+  gets an agent. Its brief is to **make it fail the way
+  that the user described**. A clean verdict that
+  contradicts a user report needs more evidence than one
+  that agrees with it, because the user was there.
+- `--deep` runs several refuters per finding with distinct
+  lenses: reproduction, cold start, wrong data,
+  concurrency. Redundancy catches flakes. Diversity catches
   failure modes.
-
-Convergence between two agents is not verification when both ran the same
-command in the same environment. When two independent verdicts agree, check
-that they had independent reasons.
 
 ## Ordering the findings
 
 Once, at the end, with everything visible:
 
-1. **Blocking** — the surface cannot be used at all: it panics, hangs,
-   produces nothing, or produces something actively wrong.
-2. **Decision violations** — the artifact contradicts a recorded decision.
-   Blocking in effect, reported on their own because they are ground the
-   user settled, not behavior that broke.
-3. **Contract drift** — it runs, and it is not what was blessed or specified.
-4. **Proof defects** — criteria and gates that certified rows they never
-   exercised.
-5. **What holds up** — named explicitly, because a report that lists only
-   failures reads as a verdict on the whole delivery, and the parts that work
-   are what the next round must not break.
+1. **Blocking**: the surface never works at all. It panics,
+   hangs, produces nothing, or produces something actively
+   wrong.
+2. **Decision violations**: the artifact contradicts a
+   recorded decision. Blocking in effect, reported apart,
+   because they are settled user ground, not broken
+   behavior.
+3. **Contract drift**: it runs, and it is not the blessed or
+   specified result.
+4. **Proof defects**: criteria and gates that certified rows
+   that they never exercised.
+5. **The holding parts**: named explicitly. A report that
+   lists only failures reads as a verdict on the whole
+   delivery. The working parts are the parts that the next
+   round never breaks.
 
-Then the recommended order, which is not the same as severity: a defect whose
-fix is a precondition for three others goes first even when one of the three
-is worse. Say which item gates which.
+Then the recommended order, never the same as severity. A
+defect whose fix gates three others goes first even when one
+of the three is worse. State the gating relations.

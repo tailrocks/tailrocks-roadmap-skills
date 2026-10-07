@@ -1,38 +1,47 @@
-# Coverage Ledger
+# Coverage ledger
 
-The traceability spine of `tailrocks-plan`: every normative statement in the
-roadmap item gets an ID at ingest, tracked through spec, plans, and the
-final gate.
+The traceability spine of `tailrocks-plan`. Every normative
+statement in the roadmap item gets an ID at ingest, tracked
+through spec, plans, and the final gate.
 
 ## Inventory pass
 
-Read the roadmap item end to end before extracting. The item's sections map
-directly:
+Read the roadmap item end to end before extraction. The sections
+of the item map directly:
 
 | Prefix | Source section | Meaning |
-|---|---|---|
-| `S#` | Screens | One per screen, plus one per materially distinct state the item draws or names |
-| `F#` | Capabilities (+ Intent) | One per specifiable behavior |
-| `W#` | Flows | One per cross-screen journey |
-| `N#` | Must not | One per non-goal / forbidden approach, with its reason |
-| `E#` | Capabilities, Screens, Flows (created here) | One per surface a user or another system can invoke — binary, subcommand, window, route, RPC method, scheduled job |
-| `R#` | References + Data & integrations | External repo, API, product, design source, integration |
-| `D#` | Decisions | Settled choices — constraints, not questions |
-| `A#` | (created here) | Assumption made where the item is silent and research cannot close it; each names its falsifying signal |
-| `Q#` | Open research questions | Researchable facts the research pass must close |
-| `B#` | Quality bar | One per acceptance statement; each must resolve to at least one spec scenario |
+| --- | --- | --- |
+| `S#` | Screens | One per screen and state |
+| `F#` | Capabilities, Intent | One specifiable behavior |
+| `W#` | Flows | One cross-screen journey |
+| `N#` | Must not | One non-goal with reason |
+| `E#` | Created here | One invocable surface |
+| `R#` | References, Data | One external touchpoint |
+| `D#` | Decisions | One settled choice |
+| `A#` | Created here | One open assumption |
+| `Q#` | Open research | One researchable fact |
+| `B#` | Quality bar | One acceptance statement |
+
+Create `E#` rows at ingest from Capabilities, Screens, and
+Flows. One `E#` covers one binary, subcommand, window,
+route, RPC method, or scheduled job. Create `A#` rows where
+the item is silent and research never closes the gap. Each
+`A#` names its falsifying signal. Each `B#` resolves to at
+least one spec scenario.
 
 Rules:
 
-- Every normative sentence in the item maps to at least one ID; leftovers
-  become an `F#`, an `N#`, or a logged deferral — never silently dropped.
+- Every normative sentence in the item maps to at least one ID.
+  Leftovers turn into an `F#`, an `N#`, or a logged deferral.
+  Never drop them silently.
 - Deferred entries in the item carry their IDs too, marked
   `deferred (reason)` from birth.
-- `D#` entries are never re-litigated: they scope research and constrain
-  the spec. A `D#` contradicted by repository reality is a surfaced
-  conflict, not a silent correction.
-- Additional invocation context ("focus on the read-only path first") is
-  folded in as ledger annotations, not as invented item content.
+- `D#` entries never reopen: they scope research and constrain
+  the spec. A `D#` contradicted by repository reality is a
+  surfaced conflict, not a silent correction.
+- Additional invocation context, such as "focus on the
+  read-only path first", folds in as ledger annotations, not as
+  invented item content.
 
 ## The ledger file — `roadmap/<slug>/plan/coverage.md`
 
@@ -45,7 +54,7 @@ Override: <none | READY skipped by user — gaps: ...>
 ## Screens
 | ID | Screen | Item anchor | Spec | Plans | Status |
 |----|--------|-------------|------|-------|--------|
-| S1 | Session list | §Screens/"Session list" | spec/sessions.md | 004 | covered |
+| S1 | Session list | §Screens | spec/sessions.md | 004 | covered |
 
 ## Capabilities
 | ID | Capability | Item anchor | Spec | Plans | Status |
@@ -58,16 +67,17 @@ Override: <none | READY skipped by user — gaps: ...>
 |----|-------------|------|-------------|----------|
 | E1 | `app run` | CLI subcommand | §Capabilities | spec/README.md |
 
-The sole entry-point registry lives in `spec/README.md`, which carries the
-owning plan and the end-to-end test; this ledger keeps the item anchors only.
+The sole entry-point registry lives in `spec/README.md`, which
+carries the owning plan and the end-to-end test. This ledger
+keeps the item anchors only.
 
 ## Must-not anchors
 | ID | Statement | Reason | Registry |
 |----|-----------|--------|----------|
 | N1 | ... | ... | spec/README.md |
 
-The sole must-not registry lives in `spec/README.md`; this ledger keeps the
-item anchors only.
+The sole must-not registry lives in `spec/README.md`. This
+ledger keeps the item anchors only.
 
 ## Quality bar
 | ID | Statement anchor | Spec scenario(s) | Status |
@@ -88,31 +98,36 @@ item anchors only.
 | ID | Question | Research topic | Status |
 ```
 
-Status values: `covered` | `deferred (reason)` | `dropped (reason)`. An
-empty cell is a planning defect; a deferral is a decision on record.
-Assumption status values are `holds` or `falsified (date, routed)`.
+Status values: `covered`, `deferred (reason)`, or `dropped
+(reason)`. An empty cell is a planning defect. A deferral is a
+decision on record. Assumption status values are `holds` or
+`falsified (date, routed)`.
 
-## How the pipeline uses it
+## How the pipeline uses the ledger
 
-- **Research pass**: `Q#` and `R#` rows name what to investigate; each
-  `Q#`/`R#` row links the research topic that answers it (topics key on
-  items, not ledger IDs); `Q#` rows close with a topic link or become
-  `A#` assumptions.
-- **Spec gate**: every `S#`, `F#`, `W#`, `N#`, `E#`, and `B#` resolves to a
-  spec location or a logged deferral before slicing. Every `B#` resolves to a
-  `#### Scenario:` or a logged deferral.
-- **Plan gate**: every requirement's IDs resolve to plan numbers; every
-  `N#` lists the plans that inline it as a guardrail; every `E#` names the
-  plan that creates the surface and the test that invokes it end to end;
-  every `A#` appears in the STOP conditions of the plans that lean on it.
-- **Vocabulary** gets no IDs — it constrains naming in spec and plans; the
-  spec gate checks terms are used per the item's Vocabulary section.
-- **Re-runs**: diff the updated item against the ledger — new statements
-  get new IDs, changed ones keep their ID with a note, removed ones flip
-  to `dropped (item revised)`. IDs are never reused.
+- **Research pass**: `Q#` and `R#` rows name the investigated
+  facts. Each `Q#` and `R#` row links the research topic that
+  answers it. Topics key on items, not ledger IDs. `Q#` rows
+  close with a topic link or turn into `A#` assumptions.
+- **Spec gate**: every `S#`, `F#`, `W#`, `N#`, `E#`, and `B#`
+  resolves to a spec location or a logged deferral before
+  slicing. Every `B#` resolves to a `#### Scenario:` or a logged
+  deferral.
+- **Plan gate**: the IDs of every requirement resolve to plan
+  numbers. Every `N#` lists the plans that inline it as a
+  guardrail. Every `E#` names the plan that creates the surface
+  and the test that invokes it end to end. Every `A#` appears
+  in the STOP conditions of the plans that lean on it.
+- **Vocabulary** gets no IDs. It constrains naming in spec and
+  plans. The spec gate checks that terms obey the Vocabulary
+  section of the item.
+- **Re-runs**: diff the updated item against the ledger. New
+  statements get new IDs, changed ones keep their ID with a
+  note, removed ones flip to `dropped (item revised)`. Never
+  reuse IDs.
 
 ## Token discipline
 
-The ledger is pointers, not prose: anchors and IDs only. The item stays the
-single source of full statements; plans quote only the load-bearing
-excerpts they inline.
+The ledger holds pointers, not prose: anchors and IDs only. The
+item stays the single source of full statements. Plans quote
+only the load-bearing excerpts that they inline.

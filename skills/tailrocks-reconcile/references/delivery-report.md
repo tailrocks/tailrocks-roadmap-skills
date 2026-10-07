@@ -1,42 +1,49 @@
 # The delivery report — `REPORT.md` and `delivery/<slug>.md`
 
-The item's ledger of verified accomplishment. `## Remaining` answers "what is
-not true yet"; the report answers "what is proven true" — and it is the one
-artifact that survives the item, because a retiring folder takes everything
-else into git archaeology while this moves to `delivery/<slug>.md` in the
+The ledger of verified accomplishment for the item. `##
+Remaining` answers "the untrue facts". The report answers
+"the proven facts". It is the one artifact that survives the
+item. A retiring folder takes everything else into git
+archaeology. This file moves to `delivery/<slug>.md` in the
 tree.
 
 ## Two homes, one file
 
-- **During the loop**: `roadmap/<slug>/REPORT.md`, writable by
-  `tailrocks-reconcile` only. Created on the first pass that has something
-  proven to record; absent before that, never a placeholder.
-- **After retirement**: moved (not copied) to `delivery/<slug>.md` in the
-  retiring commit. `delivery/` is created by the first retirement and never
-  deleted, even when the last item takes `roadmap/` with it. One file per
-  delivered item, named by slug.
+- **During the loop**: `roadmap/<slug>/REPORT.md`, writable
+  by `tailrocks-reconcile` only. Created on the first pass
+  with proven content to record. Absent before that, never a
+  placeholder.
+- **After retirement**: moved, not copied, to
+  `delivery/<slug>.md` in the retiring commit. `delivery/`
+  starts with the first retirement and never leaves the
+  tree, even when the last item takes `roadmap/` with it.
+  One file per delivered item, named by slug.
 
-## What goes in
+## The content
 
-Only what a verification round or a reconcile pass **proved**, each entry
-carrying its evidence pointer. Three sources:
+Only the proven facts of a verification round or a reconcile
+pass, each entry with its evidence pointer. Three sources:
 
-- A plan row whose done criteria re-ran green this session (step 2's
-  confirmed rows) — the capability the row covered, at its verified-at SHA.
-- A blocking defect or reported statement from an earlier round that this
-  pass re-tested and cleared — it leaves `## Remaining` and lands here, so
-  the fix is recorded, not just forgotten.
-- A surface the newest round proved working (`What holds up`) — named with
-  its evidence, because it is what the next round must not break.
+- A plan row whose done criteria re-ran green this session:
+  the covered capability of the row, at its verified-at
+  SHA.
+- A blocking defect or reported statement from an earlier
+  round that this pass re-tested and cleared. It leaves `##
+  Remaining` and lands here, so the fix stands recorded,
+  not only forgotten.
+- A surface that the newest round proved working ("What
+  holds up"), named with its evidence, because it is the
+  part that the next round never breaks.
 
-What never goes in: attempts, partial progress, unverified claims, REJECTED
-rows (the reason lives in the hub), and process narration. The report is not
-a changelog of the loop — it is the item's current proven state.
+Never in the report: attempts, partial progress, unverified
+claims, REJECTED rows (the reason lives in the hub), and
+process narration. The report is not a changelog of the loop.
+It is the current proven state of the item.
 
 ## Format
 
-Restated current each pass, never appended as a log — the same discipline as
-Remaining, inverted:
+Restated current each pass, never appended as a log. The
+same discipline as Remaining, inverted:
 
 ```markdown
 # Delivery report — <title>
@@ -52,19 +59,20 @@ Remaining, inverted:
 
 ## Not proven
 
-- <anything the item claims that no round has settled yet — one line each,
+- <each claimed but unsettled fact of the item, one line each,
   or "nothing claimed remains unverified" at retirement>
 ```
 
 Rules:
 
-- Entries are **observable statements with dated SHAs**, like Remaining
-  statements — "the console starts and renders its first frame", not
-  "console work".
-- Newer passes **restate**: an entry whose claim changed is rewritten, one
-  whose evidence was superseded carries the newest SHA. The report a reader
-  opens is always the whole truth, not a diff against earlier rounds.
-- At retirement the Status line flips to `DONE`, `Not proven` must read
-  empty (a claim left unverified is a Remaining statement, and Remaining
-  must be empty to retire), and the file moves to `delivery/<slug>.md`
-  unchanged otherwise.
+- Entries are **observable statements with dated SHAs**, like
+  Remaining statements: "the console starts and renders its
+  first frame", not "console work".
+- Newer passes **restate**: a changed claim rewrites, and
+  superseded evidence carries the newest SHA. The opened
+  report is always the whole truth, not a diff against
+  earlier rounds.
+- At retirement the Status line flips to `DONE`. `Not proven`
+  reads empty. An unverified claim is a Remaining statement,
+  and Remaining is empty at retirement. The file moves to
+  `delivery/<slug>.md` otherwise unchanged.
