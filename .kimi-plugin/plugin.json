@@ -2,43 +2,11 @@
   "name": "tailrocks-roadmap-skills",
   "version": "0.28.0",
   "description": "Evidence-bound roadmap delivery from idea capture and research through shaping, planning, execution proof, reconciliation, and retrospection.",
-  "keywords": [
-    "roadmap",
-    "ideas",
-    "brainstorming",
-    "research",
-    "planning",
-    "goals",
-    "verification",
-    "reconciliation",
-    "decisions"
-  ],
-  "author": {
-    "name": "tailrocks",
-    "url": "https://github.com/tailrocks"
-  },
-  "homepage": "https://github.com/tailrocks/tailrocks-roadmap-skills",
-  "license": "Apache-2.0",
   "skills": "./skills/",
   "interface": {
     "displayName": "Roadmap Skills",
     "shortDescription": "Evidence-bound roadmap and delivery workflows.",
-    "longDescription": "Evidence-bound roadmap delivery from idea capture and research through shaping, planning, execution proof, reconciliation, and retrospection.",
-    "capabilities": [
-      "Brainstorm",
-      "Research",
-      "Plan",
-      "Prove",
-      "Reconcile",
-      "Record",
-      "Retrospect"
-    ],
-    "websiteURL": "https://github.com/tailrocks/tailrocks-roadmap-skills",
-    "defaultPrompt": [
-      "Shape this roadmap idea.",
-      "Research this roadmap question.",
-      "Plan this ready roadmap item."
-    ]
-  },
-  "repository": "https://github.com/tailrocks/tailrocks-roadmap-skills"
+    "developerName": "tailrocks",
+    "websiteURL": "https://github.com/tailrocks/tailrocks-roadmap-skills"
+  }
 }

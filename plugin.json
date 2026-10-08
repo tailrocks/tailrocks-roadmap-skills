@@ -1,7 +1,15 @@
 {
-  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "tailrocks-roadmap-skills",
+  "version": "0.28.0",
   "description": "Evidence-bound roadmap delivery from idea capture and research through shaping, planning, execution proof, reconciliation, and retrospection.",
+  "author": {
+    "name": "tailrocks",
+    "url": "https://github.com/tailrocks"
+  },
+  "homepage": "https://github.com/tailrocks/tailrocks-roadmap-skills",
+  "repository": "https://github.com/tailrocks/tailrocks-roadmap-skills",
+  "license": "Apache-2.0",
   "keywords": [
     "roadmap",
     "ideas",
@@ -12,7 +20,5 @@
     "verification",
     "reconciliation",
     "decisions"
-  ],
-  "homepage": "https://github.com/tailrocks/tailrocks-roadmap-skills",
-  "repository": "https://github.com/tailrocks/tailrocks-roadmap-skills"
+  ]
 }

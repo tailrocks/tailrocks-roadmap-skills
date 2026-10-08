@@ -1,7 +1,9 @@
 # Roadmap eligibility
 
-Seed only an already-verified finding or approved standalone plan that needs the
-delivery pipeline: open product/architecture choice, L or cross-session scope,
-confidence below HIGH, security-boundary uncertainty, MEDIUM/HIGH fix risk, or a
-direction decision. Re-verification failure refuses rather than creating a
-speculative item.
+Seed only an already-verified finding or an approved standalone
+plan that needs the delivery pipeline. Needs are an open
+product or architecture choice. Or large or cross-session
+scope. Or confidence below HIGH. Or security-boundary
+uncertainty. Or MEDIUM or HIGH fix risk. Or a direction
+decision. A re-verification failure refuses the seed. It
+never creates a speculative item.

@@ -1,36 +1,39 @@
-# Pruning and Remaining — What the Next Round Reads
+# Pruning and Remaining — the read of the next round
 
-Rounds repeat: plan, execute, record feedback, prove, reconcile. Without a
-pruning pass every round pays to re-derive state — which plans are really
-finished, which defect is still open, what the last verification actually
-proved. `## Remaining` in the item is that derivation, done once, in the
-user's terms, backed by evidence gathered this pass.
+Rounds repeat: plan, execute, record feedback, prove,
+reconcile. Without a pruning pass every round pays to
+re-derive state: the truly finished plans, the still-open
+defect, the actual proof of the last verification. `##
+Remaining` in the item is that derivation, done once, in the
+terms of the user, backed by evidence gathered this pass.
 
 ## Pruning is by status, never by deletion
 
-A finished row leaves the working set when it is marked terminal in the
-writable hub (`roadmap/<slug>/plan/README.md`). It is never cut out of the
-manifest:
+A finished row leaves the working set when marked terminal in
+the writable hub (`roadmap/<slug>/plan/README.md`). It never
+leaves by a cut from the manifest:
 
-- `goal/check.sh` counts hub rows. A manifest with no DONE row is
-  `BLOCKED malformed=status-table`; a deleted row silently shrinks the
-  coverage the gate measures.
-- The coverage ledger points at plan numbers. Delete a row and the ledger's
-  traceability dangles against a file the fingerprint still hashes.
-- The plans themselves (`plan/NNN-*.md`) are frozen. Rows describe them; a row
-  without its plan is a lie the gate cannot see.
+- `goal/check.sh` counts hub rows. A manifest with no DONE
+  row is `BLOCKED malformed=status-table`. A deleted row
+  silently shrinks the coverage that the gate measures.
+- The coverage ledger points at plan numbers. A deleted row
+  dangles the traceability of the ledger against a file that
+  the fingerprint still hashes.
+- The plans themselves (`plan/NNN-*.md`) are frozen. Rows
+  describe them. A row without its plan is a lie that the
+  gate never sees.
 
-What pruning actually buys is a cheaper next round: record the verified-at SHA
-beside each confirmed row, and the next pass re-confirms it from an empty
-`git diff --stat <verified-at SHA>..HEAD -- <in-scope paths>` instead of a full
-criteria re-run. An in-scope change means the row is re-verified for real.
-Only a row confirmed by this skill carries a verified-at SHA — an executor's
-claim never earns one.
+Pruning buys a cheaper next round. Record the verified-at
+SHA beside each confirmed row. The next pass re-confirms it
+from an empty in-scope diff instead of a full criteria
+re-run. An in-scope change means real re-verification of the
+row. Only a row confirmed by this skill carries a
+verified-at SHA. A claim of an executor never earns one.
 
 ## Writing `## Remaining`
 
-One line per open thing, written as an observable statement — what is not yet
-true, from outside the code:
+One line per open fact, written as an observable statement:
+the untrue fact, from outside the code:
 
 ```markdown
 ## Remaining
@@ -42,43 +45,53 @@ true, from outside the code:
 
 Sources, in order:
 
-1. Blocking defects in the highest-numbered `verification/NN-report.md` —
-   including its `VIOLATED` decision rows, which are blocking.
-2. Defects in the newest `verification/NN-feedback.md` that the report did not
-   clear — a user-reported defect nobody has re-tested is still open.
-3. Nonterminal hub rows, one statement each, naming the plan number.
+1. Blocking defects in the highest-numbered
+   `verification/NN-report.md`, with its `VIOLATED`
+   decision rows, which are blocking.
+2. Defects in the newest `verification/NN-feedback.md` that
+   the report never cleared. A user-reported defect that
+   nobody re-tested is still open.
+3. Nonterminal hub rows, one statement each, with the plan
+   number named.
 
 Rules:
 
-- **Delete what this pass disproved.** A statement whose defect no longer
-  reproduces, or whose row just went DONE, comes out — and moves into
-  `REPORT.md` with its evidence (format:
-  [`delivery-report.md`](delivery-report.md)). Remaining that only grows is a
-  changelog, and the item carries no history; the report is where proven work
-  is kept.
-- **Tag what execution cannot close.** A statement whose next step is not
-  another execution round gets its back-edge in the line:
-  `(needs-decision: <what the user must settle>)` routes to
-  `tailrocks-record-decision`, `(needs-research: <the open fact>)` routes to
-  `tailrocks-research`. An untaggable statement is execution work; a tagged
-  one is how the close-out names the right skill instead of re-running a
-  loop that cannot close it.
-- Observable statements, not tasks. "Filter ignores archived sessions" is
-  evidence; "fix the filter" is a plan, and plans are frozen elsewhere.
-- No wishes. Improvements nobody committed to belong in the item's own
-  sections or a new idea — never here.
-- Every statement traces to something read this pass. Nothing enters Remaining
-  from memory, from a transcript, or from a claim.
-- The roadmap index's `Remaining` column is the count of these statements, or
-  `—` when nothing has been verified yet.
+- **Delete the disproved facts.** A statement whose defect
+  no longer reproduces, or whose row just went DONE, comes
+  out and moves into `REPORT.md` with its evidence (format:
+  [`delivery-report.md`](delivery-report.md)). A Remaining
+  that only grows is a changelog, and the item carries no
+  history. The report is the home of proven work.
+- **Tag the unclosable facts.** A statement whose next act
+  is not another execution round carries its back-edge in
+  the line: `(needs-decision: <the unsettled user fact>)`
+  routes to `tailrocks-record-decision`,
+  `(needs-research: <the open fact>)` routes to
+  `tailrocks-research`. An untaggable statement is execution
+  work. A tagged one is the signal where the close-out names
+  the right skill instead of re-running an unclosable loop.
+- Observable statements, not tasks. "Filter ignores archived
+  sessions" is evidence. "Fix the filter" is a plan, and
+  plans are frozen elsewhere.
+- No wishes. Uncommitted improvements belong in the own
+  sections of the item or in a new idea, never here.
+- Every statement traces to a read of this pass. Nothing
+  enters Remaining from memory, from a transcript, or from a
+  claim.
+- The `Remaining` column of the roadmap index is the count
+  of these statements, or `—` when nothing verified yet.
 
-## What Remaining means per status
+## The meaning of Remaining per status
 
-- **`DONE`** — Remaining is empty, and that emptiness is the claim that
-  nothing is left: every row terminal, the goal condition met this session,
-  and the newest round finding no blocking defect. Only this skill sets it,
-  and the same invocation retires the item out of the tree — the conditions,
-  the refusals, and the two commits are in [`retirement.md`](retirement.md).
-- **`IN EXECUTION`** — Remaining is the work order for the next round.
-- **Any other status with an empty Remaining** — nobody has verified yet. That
-  is not the same as nothing being left, and it is never read as DONE.
+- **`DONE`**: Remaining is empty, and that emptiness claims
+  nothing left. Every row is terminal. The goal condition
+  was met this session. The newest round holds no blocking
+  defect. Only this skill sets it, and the same invocation
+  retires the item out of the tree. The conditions, the
+  refusals, and the two commits live in
+  [`retirement.md`](retirement.md).
+- **`IN EXECUTION`**: Remaining is the work order for the
+  next round.
+- **Any other status with an empty Remaining**: nobody
+  verified yet. That fact differs from nothing left, and it
+  never reads as DONE.
