@@ -64,6 +64,12 @@ deleted here, not rewritten:
 - `tailrocks-improve-execution`
 - `tailrocks-improve-reconcile`
 
+## 0.28.1 - 2026-10-08
+
+- Regenerated CI with Velnor Actions 0.1.4.
+- Replaced the `.github/CLAUDE.md` symlink with a regular pointer
+  file. Installers that reject symlinks now accept the package.
+
 ## 0.28.0 - 2026-10-06
 
 Fifteen-skill package at commit `98d23280cd562c9298ce13ae40bd0eb73a3e376a`
