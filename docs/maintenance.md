@@ -83,6 +83,19 @@ npx --yes markdownlint-cli2@0.23.3 "**/*.md"
 Expected result: no issues. The version is pinned. There is no
 shared markdownlint config yet, so the check uses default rules.
 
+Markdown link check. Install the pinned Lychee version and check all
+Markdown files:
+
+```sh
+mise --no-config --no-env --no-hooks install ubi:lycheeverse/lychee@0.15.1
+mise --no-config --no-env --no-hooks exec \
+  ubi:lycheeverse/lychee@0.15.1 -- \
+  lychee --no-progress '**/*.md' '**/*.markdown'
+```
+
+Expected result: Lychee exits 0 and reports no broken links. This is
+the same version and command that CI runs.
+
 Native validator probes (read-only, no install):
 
 ```sh
