@@ -1,0 +1,18 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "tailrocks-roadmap-skills",
+  "description": "Evidence-bound roadmap delivery from idea capture and research through shaping, planning, execution proof, reconciliation, and retrospection.",
+  "keywords": [
+    "roadmap",
+    "ideas",
+    "brainstorming",
+    "research",
+    "planning",
+    "goals",
+    "verification",
+    "reconciliation",
+    "decisions"
+  ],
+  "homepage": "https://github.com/tailrocks/tailrocks-roadmap-skills",
+  "repository": "https://github.com/tailrocks/tailrocks-roadmap-skills"
+}
