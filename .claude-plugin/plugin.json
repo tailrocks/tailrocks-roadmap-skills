@@ -1,5 +1,9 @@
 {
   "name": "tailrocks-roadmap-skills",
-  "version": "0.29.3",
-  "description": "Evidence-bound roadmap delivery from idea capture and research through shaping, planning, execution proof, reconciliation, and retrospection."
+  "version": "0.29.4",
+  "description": "Evidence-bound roadmap delivery from idea capture and research through shaping, planning, execution proof, reconciliation, and retrospection.",
+  "author": {
+    "name": "tailrocks",
+    "url": "https://github.com/tailrocks"
+  }
 }
