@@ -1,6 +1,6 @@
 # Compatibility and verification
 
-`tailrocks-roadmap-skills` version `0.29.2` publishes 12 skills from
+`tailrocks-roadmap-skills` version `0.29.3` publishes 12 skills from
 one `skills/<id>/SKILL.md` tree. Each skill keeps its references, scripts,
 and assets in the installed package.
 
