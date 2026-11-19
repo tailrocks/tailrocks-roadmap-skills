@@ -6,10 +6,7 @@ description: >-
   with subagent fan-out, evidence per surface, and a vacuous-proof
   audit. Use only when the user explicitly requests this skill. Judges
   only: never fixes, never writes status.
-argument-hint: "<roadmap-slug> [--deep]"
-disable-model-invocation: true
 license: Apache-2.0
-user-invocable: true
 ---
 
 # Prove
@@ -44,6 +41,9 @@ Use this skill only on explicit request with a planned,
 executed item. It never fixes and never writes status.
 
 ## Before you start
+
+When choosing a model, reasoning effort, or delegation route, read
+[model and reasoning choices](references/model-routing.md).
 
 This skill is user-only. It runs only on an explicit human
 command. The invocation authorizes one commit and one push for

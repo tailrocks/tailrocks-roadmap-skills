@@ -6,10 +6,7 @@ description: >-
   when the user explicitly requests this skill with a live human. The
   only source of READY. Do not use on a raw DRAFT (tailrocks-brainstorm
   first) or without a live human.
-argument-hint: "<roadmap-slug> [--batch]"
-disable-model-invocation: true
 license: Apache-2.0
-user-invocable: true
 ---
 
 # Finalize
@@ -28,6 +25,9 @@ a DRAFT item to `tailrocks-brainstorm` first. Without a live
 human, stop.
 
 ## Before you start
+
+When choosing a model, reasoning effort, or delegation route, read
+[model and reasoning choices](references/model-routing.md).
 
 This skill is user-only. It runs only on an explicit human
 command. The invocation authorizes one commit and one push for

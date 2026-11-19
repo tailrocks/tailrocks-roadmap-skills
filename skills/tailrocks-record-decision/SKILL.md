@@ -6,10 +6,7 @@ description: >-
   what it invalidates, including the reopen of READY or PLANNED work.
   Use only when the user explicitly requests this skill with one stated
   decision. Never decides for the user.
-argument-hint: "<roadmap-slug> <decision>"
-disable-model-invocation: true
 license: Apache-2.0
-user-invocable: true
 ---
 
 # Record Decision
@@ -19,7 +16,7 @@ user-invocable: true
 This skill takes one decision that the user made and makes the
 roadmap item true to it: record, then reconcile.
 
-One invocation records one decision. When a message carries
+Give the roadmap slug followed by one decision. When a message carries
 several distinct decisions, ask which one to record first. Later
 decisions need separate invocations, so each propagation and
 each commit stays atomic.
@@ -31,6 +28,9 @@ through step 3. Mark plans that list that `A#` STALE with the
 falsification as reason.
 
 ## Before you start
+
+When choosing a model, reasoning effort, or delegation route, read
+[model and reasoning choices](references/model-routing.md).
 
 This skill is user-only. It runs only on an explicit human
 command. The invocation authorizes one commit and one push for

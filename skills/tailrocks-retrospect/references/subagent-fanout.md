@@ -9,14 +9,11 @@ not every byte of a foreign lane history.
 
 ## When to fan out
 
-- **Always** on an external lane (`--repo` or `--pr`), where
-  every read is an API call and nothing caches locally.
-- **Always** when the commit table is large enough to crowd
-  out the detectors when assembled inline. As a rule of
-  thumb, past a dozen commits, or a retired item whose full
-  artifact set comes out of history.
-- A three-commit lane with the item in the tree needs none
-  of this. Read it and move on.
+- Read small lanes directly, including remote lanes with few commits.
+- Delegate independent commit ranges or artifacts when their size or
+  retrieval time justifies separate investigators.
+- Check the shared API budget before parallel remote reads. Read in
+  sequence when concurrency is unavailable or offers little benefit.
 
 ## The acts of investigators
 
@@ -47,9 +44,9 @@ The assembled commit table, the trailer classification, all
 six detectors, every finding, every patch, and the record
 itself. Judgment never delegates: an investigator returns the
 acts of a commit diff, and the detector decides the meaning.
-Re-opening the cited artifact of a kept finding is an
-investigator job. The survival decision of the finding is
-not.
+Re-open the cited artifact for each retained finding. A read-only
+investigator can collect this evidence. The orchestrator decides
+whether to retain the finding.
 
 ## External lanes
 
@@ -60,7 +57,7 @@ cloned into this tree:
   repos/<owner>/<repo>/pulls/<N>/commits`, reconciled
   against the declared commit count, then one
   `repos/<owner>/<repo>/commits/<sha>` fetch per commit.
-  These fetches fan out.
+  Apply the fan-out criteria above to these fetches.
 - Read the artifacts of a delivered item from the contents
   API at the parent of the retirement commit. Resolve the
   retirement SHA first. Use `git log --diff-filter=D` on a
@@ -71,8 +68,8 @@ cloned into this tree:
   pull request or `refs/pull/<N>/head`, and the record states
   the basis where the table stands.
 
-The precondition never moves: the lane carries
-`Tailrocks-Skill` trailers and the roadmap structure of the
-item. A pull request without them is declined with the
-missing facts named. Fan-out changes the reader of the
-evidence, never the counted evidence.
+When a lane has no `Tailrocks-Skill` trailer, run the artifact checks
+that the available evidence supports. Follow the attribution rules in
+[divergence detectors](divergence-detectors.md). Mark skill-grouped results
+`uncertain attribution`. Report affected grouped checks as `unrunnable`
+with the unattributed count. Never count an inferred identity as a skill act.

@@ -1,8 +1,8 @@
 # Execution roles
 
-Select the least-capable route whose eligibility holds for the
-exact task shape. Cost never makes a known-wrong route
-acceptable.
+Apply each role's eligibility criteria to the task. When you
+can choose among eligible routes, consider cost, delay, and
+likely rework. Prefer an economical route that meets the criteria.
 
 Every assignment records the role, inputs, output or evidence,
 and the escalation taken. Never assign a route that lacks an

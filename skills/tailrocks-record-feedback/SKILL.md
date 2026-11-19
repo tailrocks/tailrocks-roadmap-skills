@@ -6,10 +6,7 @@ description: >-
   given. Use only when the user explicitly requests this skill. Captures
   only: never investigates, judges, or fixes. tailrocks-prove verifies
   the round.
-argument-hint: "<roadmap-slug>"
-disable-model-invocation: true
 license: Apache-2.0
-user-invocable: true
 ---
 
 # Record Feedback
@@ -39,6 +36,9 @@ opens one round. It writes exactly one file,
 the item, the plan, or a status.
 
 ## Before you start
+
+When choosing a model, reasoning effort, or delegation route, read
+[model and reasoning choices](references/model-routing.md).
 
 This skill is user-only. It runs only on an explicit human
 command. The invocation authorizes one commit and one push for

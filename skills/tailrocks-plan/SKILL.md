@@ -1,15 +1,12 @@
 ---
 name: tailrocks-plan
 description: >-
-  Converts a READY roadmap item into roadmap/<slug>/plan/ and goal/: a
-  coverage ledger, a research-gap manifest, an OpenSpec-grammar spec,
-  one zero-context plan per work item, and the goal handoff. Use only
+  Converts a READY roadmap item into its plan package and goal handoff.
+  Produces a coverage ledger, research-gap manifest, OpenSpec-grammar
+  spec, and one self-contained plan per work item. Use only
   when the user explicitly requests this skill with a READY item. Do
   not use on unshaped items or on one-session changes.
-argument-hint: "<roadmap-slug> [additional context] [--deep]"
-disable-model-invocation: true
 license: Apache-2.0
-user-invocable: true
 ---
 
 # Plan
@@ -32,6 +29,9 @@ One item fills one folder: `roadmap/<slug>/plan/` (hub, plans,
 request, recorded as the exception.
 
 ## Before you start
+
+When choosing a model, reasoning effort, or delegation route, read
+[model and reasoning choices](references/model-routing.md).
 
 This skill is user-only. It runs only on an explicit human
 command. The invocation authorizes one commit and one push for
@@ -89,9 +89,8 @@ Then planning stops and routes that manifest to
 `tailrocks-research`.
 
 Refresh a current `plan/` in place, never duplicate it. The
-re-run rules live in the plan template reference. Subagents
-inherit nothing: every brief restates its rules, and one
-plan-writer subagent writes exactly one plan, never two.
+re-run rules live in the plan template reference. Give each
+plan writer a self-contained brief for exactly one plan.
 Clone reference projects into a disposable directory outside
 the repository, read-only, cited as `file:line` plus
 repository URL and commit.
@@ -201,7 +200,8 @@ repository URL and commit.
    end-to-end test. Back every dependency edge with a
    precondition check. It reports uncovered IDs and missing
    edges. The orchestrator fixes them and re-runs the gate.
-   Run inline when parallel agents are unavailable.
+   Run fresh reviewers in sequence when concurrency is unavailable.
+   Without fresh context, record `DEGRADED` and leave `PLANNED` unset.
 
 7. **Write the goal handoff.** Per the goal handoff
    reference, write `roadmap/<slug>/goal/START.md` (the

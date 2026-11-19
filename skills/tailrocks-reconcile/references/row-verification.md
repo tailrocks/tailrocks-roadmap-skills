@@ -30,7 +30,7 @@ The orchestrator never delegates:
 
 ## Verifier brief — restate, never assume
 
-Verifiers inherit nothing. Each brief holds:
+Include each item below in the verifier's brief.
 
 - the row. Plan file path, claimed status, and the exact
   commands to re-run, verbatim from the plan file. Commands
@@ -47,7 +47,7 @@ Verifiers inherit nothing. Each brief holds:
   targets built, files checked, and scenarios evaluated.
   Read the count from the own output of the command. Exit
   status alone is not evidence.
-- the rules that the verifier cannot know, verbatim.
+- the verifier's operating rules, verbatim.
   Verification only: run the named commands and read files.
   No installs, no formatters, no commits, no writes.
   Nothing that mutates the working tree. Executor claims are

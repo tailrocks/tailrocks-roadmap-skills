@@ -59,7 +59,7 @@ reference-project read or a multi-page platform-docs
 verification, goes to a read-only background subagent. The
 interview continues on independent frontier questions. The pages
 that the investigator reads stay in its context. Only the finding
-returns. Investigators inherit nothing. Each brief restates the
+returns. Give each investigator a brief that states the
 question. It restates the evidence standard: URL, `file:line`,
 or method, with HIGH, MED, or LOW confidence. It restates the
 read-only scope with no writes anywhere. It restates the

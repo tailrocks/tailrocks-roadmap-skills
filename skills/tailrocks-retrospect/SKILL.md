@@ -6,10 +6,7 @@ description: >-
   IDs, and verification rounds, and proposes patches to the skills at
   fault. Use only when the user explicitly requests this skill. Proposes
   only: tailrocks-skill-update edits skills.
-argument-hint: "<roadmap-slug> [--source <path>] [--repo <owner/name>] [--pr <number>]"
-disable-model-invocation: true
 license: Apache-2.0
-user-invocable: true
 ---
 
 # Retrospect
@@ -34,15 +31,22 @@ follows from findings by inference.
 
 ## Before you start
 
+When choosing a model, reasoning effort, or delegation route, read
+[model and reasoning choices](references/model-routing.md).
+
 This skill is user-only. It runs only on an explicit human
 command. The invocation authorizes one commit for the
 retrospective record in the landing tree. The audited
 repository stays read-only.
 
+Supply the roadmap slug. Use `--source <path>` for a local source or
+`--repo <owner/name>` for a repository. Use `--pr <number>` to select
+a pull request.
+
 Read these references before any action:
 
 - [`subagent-fanout.md`](references/subagent-fanout.md) gives
-  the fan-out threshold and the investigator briefs.
+  the fan-out criteria and the investigator briefs.
 - [`divergence-detectors.md`](references/divergence-detectors.md)
   gives the table build and the six detectors.
 - [`patch-shape.md`](references/patch-shape.md) gives the six
@@ -125,10 +129,8 @@ them on its own branch.
    Where the ingest line of the package pins a different
    SHA, record both. Their gap is the item changed under a
    frozen package. Tabulate every commit: SHA, author date,
-   subject, trailers, changed paths. Apply the threshold in
-   the fan-out reference: read-only investigators are
-   mandatory for external or large and history-recovered
-   lanes. A small local lane stays here. Tables and all
+   subject, trailers, changed paths. Use the fan-out reference
+   to choose which independent reads to delegate. Tables and all
    judgment stay here. A lane whose commits carry no
    `Tailrocks-Skill` trailer at all never refuses. It
    permits the artifact-keyed detectors. It marks every
@@ -260,7 +262,7 @@ on a self-audit.
 ## References
 
 - `references/subagent-fanout.md`: read it before step 1.
-  It gives the threshold and the briefs.
+  It gives the criteria and the briefs.
 - `references/divergence-detectors.md`: read it before
   steps 1 through 3. It gives the table and the six
   detectors.
