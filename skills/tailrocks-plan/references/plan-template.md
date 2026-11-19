@@ -305,8 +305,7 @@ Stop and report back (never improvise) when:
 
 ## Writer brief — one subagent, one plan
 
-Plan-writer subagents inherit nothing and write exactly one plan.
-Each brief holds:
+Assign each writer exactly one plan. Include the following items in its brief.
 
 - the manifest entry, verbatim: goal, covered requirements,
   scope, dependencies, guardrail IDs.
@@ -323,7 +322,7 @@ Each brief holds:
   and STOP conditions are explicit. Otherwise retain
   `frontier-judgment` and name the unresolved decision. Every
   STOP routes to the frontier owner.
-- the rules that the writer cannot know, verbatim. Write only
+- the writer's operating rules, verbatim. Write only
   the one target file. Never modify source. Inline the spec
   contract and plan-specific guardrails. The executor reads
   only the hub and the plan. Package-invariant law belongs to

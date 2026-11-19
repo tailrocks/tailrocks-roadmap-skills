@@ -1,15 +1,12 @@
 ---
 name: tailrocks-reconcile
 description: >-
-  Trues up roadmap/<slug>/ with execution reality: re-runs each plan
+  Reconciles a roadmap item with the execution evidence. Re-runs each plan
   row done criteria, rejects criteria that executed nothing, folds the
   newest verification round into the Remaining of the item, and sets
   the supported status. Use only when the user explicitly requests
   this skill. Only this skill sets DONE.
-argument-hint: "<roadmap-slug> [--deep] [--batch]"
-disable-model-invocation: true
 license: Apache-2.0
-user-invocable: true
 ---
 
 # Reconcile
@@ -43,6 +40,9 @@ verification-command authority. Invoke directly. No routing
 skill dispatches it.
 
 ## Before you start
+
+When choosing a model, reasoning effort, or delegation route, read
+[model and reasoning choices](references/model-routing.md).
 
 This skill is user-only. It runs only on an explicit human
 command. The invocation authorizes one commit and one push

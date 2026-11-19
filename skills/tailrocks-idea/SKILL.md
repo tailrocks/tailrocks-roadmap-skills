@@ -2,14 +2,11 @@
 name: tailrocks-idea
 description: >-
   Captures one raw product or feature idea as a new DRAFT roadmap item
-  under roadmap/<slug>/ and registers it in the index. Use only when
+  in its own roadmap directory and registers it in the index. Use only when
   the user explicitly requests this skill with raw words: a sentence, a
   paragraph, or pasted notes. Capture only: no interview, no research,
   no plan. Do not use for an existing item or for a verified finding.
-argument-hint: "<idea text>"
-disable-model-invocation: true
 license: Apache-2.0
-user-invocable: true
 ---
 
 # Idea
@@ -30,6 +27,9 @@ thinking tool. Preserve the words of the user, arrange them into
 the item template, and stop. Zero questions is the normal case.
 
 ## Before you start
+
+When choosing a model, reasoning effort, or delegation route, read
+[model and reasoning choices](references/model-routing.md).
 
 This skill is user-only. It runs only on an explicit human
 command. The invocation authorizes one branch, one commit, one

@@ -6,9 +6,7 @@ description: >-
   challenged, interrogated, or stress-tested. Conversation-only: the
   skill retrieves facts, recommends answers, leaves decisions to the
   user, requires confirmation, and never executes or writes artifacts.
-argument-hint: "<idea, plan, or decision>"
 license: Apache-2.0
-user-invocable: true
 ---
 
 # Grilling
@@ -31,6 +29,9 @@ handoff names the owner. It never invokes that owner and never
 grants its authority.
 
 ## Before you start
+
+When choosing a model, reasoning effort, or delegation route, read
+[model and reasoning choices](references/model-routing.md).
 
 This skill is model-selectable, but it stays read-only.
 Repository and documentation inspection establishes facts. It

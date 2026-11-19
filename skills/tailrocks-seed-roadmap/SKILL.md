@@ -6,10 +6,7 @@ description: >-
   Use only when the user explicitly requests this skill with verified
   input. Writes roadmap artifacts only. Never implements, never seeds
   raw ideas, and never touches an existing item.
-argument-hint: "<verified finding or plans/NNN-name.md> [--batch]"
-disable-model-invocation: true
 license: Apache-2.0
-user-invocable: true
 ---
 
 # Seed Roadmap
@@ -37,6 +34,9 @@ authorization, never widens roadmap paths, and never creates a
 second pull request.
 
 ## Before you start
+
+When choosing a model, reasoning effort, or delegation route, read
+[model and reasoning choices](references/model-routing.md).
 
 This skill is user-only. It runs only on an explicit human
 command. The invocation authorizes one branch, one commit, one

@@ -6,10 +6,7 @@ description: >-
   investigators. Use only when the user explicitly requests this skill.
   Do not use for decisions only the user makes, or for questions that
   one lookup answers.
-argument-hint: "<question | roadmap-slug> [--slug <topic-name>] [--for <roadmap-slug>] [--deep] [--batch]"
-disable-model-invocation: true
 license: Apache-2.0
-user-invocable: true
 ---
 
 # Research
@@ -48,6 +45,9 @@ user decision or credential, and never grants target-command or
 unrelated network authority.
 
 ## Before you start
+
+When choosing a model, reasoning effort, or delegation route, read
+[model and reasoning choices](references/model-routing.md).
 
 This skill is user-only. It runs only on an explicit human
 command. The invocation authorizes one commit and one push for
@@ -108,8 +108,8 @@ and never silently ignore it.
 2. **Fan out.** Dispatch independent parallel investigators,
    one per question cluster. Each investigator writes its own
    `research/<topic>/NN-<chapter>.md` per the chapter contract
-   of the playbook. It carries the brief with the rules that
-   it cannot inherit. Investigate serially only when parallel
+   of the playbook. Give each investigator a self-contained brief
+   with its operating rules. Investigate serially only when parallel
    agents are unavailable, and say so.
 
 3. **Vet.** Fan out one fresh-context, read-only
