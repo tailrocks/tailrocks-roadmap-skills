@@ -1,6 +1,6 @@
 # Installation
 
-`tailrocks-roadmap-skills` version `0.29.0` contains 12 skills.
+`tailrocks-roadmap-skills` version `0.29.1` contains 12 skills.
 The package source is [tailrocks/tailrocks-roadmap-skills][package].
 The [Tailrocks catalog][catalog] pins one upstream commit per package.
 
